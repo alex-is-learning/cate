@@ -1,11 +1,12 @@
 ---
 title: "Product Brief: Cate"
-status: "draft"
+status: "approved"
 created: "2026-04-03"
 inputs:
-  - "_bmad-output/prd.md"
-  - "_bmad-output/architecture.md"
+  - "~/claude/dave/_bmad-output/prd.md"
+  - "~/claude/dave/_bmad-output/architecture.md"
   - "~/virgo-and-fiona/_bmad-output/architecture.md"
+  - "~/virgo-and-fiona/_bmad-output/prd-fiona.md"
   - "Alex's Project Management Board.pdf (Miro export, 2026-03-20 and 2026-03-27)"
   - "Principle of Explosion (Personal Logic).md"
   - "Attila 1-1 2026-04-01.md"
@@ -181,14 +182,9 @@ Unlike Dave (where state is the topic log) and Fiona (where state is mode files)
 
 All writes to this file are append-only (under the relevant H2, dated blocks). The kernel is never rewritten — it accumulates.
 
-### Open Architectural Question: Which Repo?
+### Repo
 
-Cate could live in:
-1. **The `dave` repo** — as a third skill alongside Dave
-2. **The `virgo-and-fiona` repo** — as a third private-vault skill
-3. **A new `cate` repo** — following the same repo pattern as the others
-
-Given that Cate is private-vault and thematically distinct from learning (Dave) and schema therapy (Virgo/Fiona), a new repo is likely the right call. But this is an architectural decision for the PRD/architecture phase.
+Cate lives in a standalone repo at `~/claude/cate/` — same pattern as `~/claude/dave` and `~/virgo-and-fiona`. Private-vault and thematically distinct from both.
 
 ---
 
