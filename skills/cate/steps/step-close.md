@@ -22,13 +22,13 @@ Store all variables.
 
 ---
 
-## 2. Grind Score
+## 2. Focus Score
 
 Ask:
 
-> Grind score — 1 to 5. How present and locked in were you with the work today?
+> Focus score — 1 to 5. How present and locked in were you with the work today?
 
-Wait for Alex's response. Store as `GRIND_SCORE`.
+Wait for Alex's response. Store as `FOCUS_SCORE`.
 
 ---
 
@@ -145,7 +145,7 @@ cat >> "$LOG_FILE" << 'LOGEOF'
 
 ## TODAY_DATE_PLACEHOLDER Session SESSION_N_PLACEHOLDER
 
-**Grind score:** GRIND_SCORE_PLACEHOLDER/5
+**Focus score:** FOCUS_SCORE_PLACEHOLDER/5
 **Pivot impulses:** PIVOT_COUNT_PLACEHOLDER
 PIVOT_SUMMARY_PLACEHOLDER
 **Stack changes:** STACK_CHANGES_PLACEHOLDER
@@ -177,7 +177,7 @@ If the log write fails, surface the error:
 ```bash
 VAULT_ROOT=~/scrapbook_private/source/content/Cate
 HOMEPAGE="$VAULT_ROOT/Alex and Cate.md"
-NEW_ROW="| ${TODAY_DATE} | ${SESSION_N} | ${PIVOT_COUNT} | ${QUEUED_COUNT} | ${KERNEL_UPDATES} | ${GRIND_SCORE}/5 | complete |"
+NEW_ROW="| ${TODAY_DATE} | ${SESSION_N} | ${PIVOT_COUNT} | ${QUEUED_COUNT} | ${KERNEL_UPDATES} | ${FOCUS_SCORE}/5 | complete |"
 awk -v row="$NEW_ROW" '/^\|---/{print; print row; next} {print}' "$HOMEPAGE" > /tmp/cate_home.tmp && mv /tmp/cate_home.tmp "$HOMEPAGE"
 ```
 

@@ -152,7 +152,7 @@ On invocation, read the argument and load the corresponding step file:
 |----------|-----------|---------|
 | `init` | `./steps/step-init.md` | Vault scaffolding, kernel interview, axiom/commitment/lock-in setup, kernel file creation, homepage creation |
 | `hello` | `./steps/step-hello.md` | Early exit detection, kernel read, status report, opening question, transcript file creation, load step-session.md |
-| `close` | `./steps/step-close.md` | Grind score, pivot summary, transcript write, log append, kernel update, homepage row |
+| `close` | `./steps/step-close.md` | Focus score, pivot summary, transcript write, log append, kernel update, homepage row |
 | *(no argument, in-session)* | `./steps/step-session.md` | Pivot detection, 5-step interrogation, trough detection, queue routing, kernel update on pass |
 
 **Dispatch procedure:**
