@@ -93,6 +93,11 @@ Derive current state for:
 
 Tell Alex (brief and factual):
 
+> Axioms:
+> - [Axiom 1]
+> - [Axiom 2]
+> - [Axiom 3 if present]
+>
 > Stack:
 > - [Commitment 1] — end condition: [condition] | lock-in until: [date] | [X] days in
 > - [Commitment 2] — end condition: [condition] | lock-in until: [date] | [X] days in

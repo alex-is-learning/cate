@@ -151,8 +151,9 @@ On invocation, read the argument and load the corresponding step file:
 | Argument | Step File | Purpose |
 |----------|-----------|---------|
 | `init` | `./steps/step-init.md` | Vault scaffolding, kernel interview, axiom/commitment/lock-in setup, kernel file creation, homepage creation |
-| `hello` | `./steps/step-hello.md` | Early exit detection, kernel read, status report, opening question, transcript file creation, load step-session.md |
-| `close` | `./steps/step-close.md` | Focus score, pivot summary, transcript write, log append, kernel update, homepage row |
+| `hello` | `./steps/step-hello.md` | Early exit detection, kernel read, axiom/stack/queue status report, opening question, transcript file creation, load step-session.md |
+| `remind` | `./steps/step-hello.md` | Same as hello — axiom/stack/queue reminder, session entry |
+| `close` | `./steps/step-close.md` | Pivot summary, transcript write, log append, kernel update, homepage row |
 | *(no argument, in-session)* | `./steps/step-session.md` | Pivot detection, 5-step interrogation, trough detection, queue routing, kernel update on pass |
 
 **Dispatch procedure:**

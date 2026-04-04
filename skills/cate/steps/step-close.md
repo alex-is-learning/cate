@@ -22,27 +22,7 @@ Store all variables.
 
 ---
 
-## 2. Focus Score
-
-Ask:
-
-> Focus score — 1 to 5. How present and locked in were you with the work today?
-
-Wait for Alex's response. Store as `FOCUS_SCORE`.
-
----
-
-## 3. Deliverables Note
-
-Ask:
-
-> What did you produce since the last session? Can be nothing — just note it.
-
-Wait. Store as `DELIVERABLES`. If Alex says nothing, store "none".
-
----
-
-## 4. Pivot Summary
+## 2. Pivot Summary
 
 From the session context, derive:
 - `PIVOT_COUNT` — number of pivot impulses that arose
@@ -65,7 +45,7 @@ No preamble. State the facts.
 
 ---
 
-## 5. Write Transcript
+## 3. Write Transcript
 
 Write all session turns to the transcript as a single heredoc append. Include every exchange held in context, in order:
 
@@ -90,7 +70,7 @@ If the write fails, stop:
 
 ---
 
-## 6. Kernel Updates
+## 4. Kernel Updates
 
 If any `QUEUE_ENTRY` items were held in context during the session, append them to the kernel:
 
@@ -138,19 +118,17 @@ If there are no queue entries and no kernel updates, skip this section.
 
 ---
 
-## 7. Log Append
+## 5. Log Append
 
 ```bash
 cat >> "$LOG_FILE" << 'LOGEOF'
 
 ## TODAY_DATE_PLACEHOLDER Session SESSION_N_PLACEHOLDER
 
-**Focus score:** FOCUS_SCORE_PLACEHOLDER/5
 **Pivot impulses:** PIVOT_COUNT_PLACEHOLDER
 PIVOT_SUMMARY_PLACEHOLDER
 **Stack changes:** STACK_CHANGES_PLACEHOLDER
 **Queue additions:** QUEUED_COUNT_PLACEHOLDER
-**Deliverables:** DELIVERABLES_PLACEHOLDER
 **Kernel updates:** KERNEL_UPDATES_PLACEHOLDER
 
 LOGEOF
@@ -172,12 +150,12 @@ If the log write fails, surface the error:
 
 ---
 
-## 8. Homepage Row
+## 6. Homepage Row
 
 ```bash
 VAULT_ROOT=~/scrapbook_private/source/content/Cate
 HOMEPAGE="$VAULT_ROOT/Alex and Cate.md"
-NEW_ROW="| ${TODAY_DATE} | ${SESSION_N} | ${PIVOT_COUNT} | ${QUEUED_COUNT} | ${KERNEL_UPDATES} | ${FOCUS_SCORE}/5 | complete |"
+NEW_ROW="| ${TODAY_DATE} | ${SESSION_N} | ${PIVOT_COUNT} | ${QUEUED_COUNT} | ${KERNEL_UPDATES} | complete |"
 awk -v row="$NEW_ROW" '/^\|---/{print; print row; next} {print}' "$HOMEPAGE" > /tmp/cate_home.tmp && mv /tmp/cate_home.tmp "$HOMEPAGE"
 ```
 
@@ -186,7 +164,7 @@ If the write fails:
 
 ---
 
-## 9. Frontmatter and Backlink Scan
+## 7. Frontmatter and Backlink Scan
 
 Scan all `.md` files in `$VAULT_ROOT/sessions/` for missing frontmatter or missing `[[Alex and Cate]]` backlink. Patch any that are missing.
 
@@ -217,7 +195,7 @@ If any individual file patch fails, note it and continue.
 
 ---
 
-## 10. Close
+## 8. Close
 
 Tell Alex:
 
